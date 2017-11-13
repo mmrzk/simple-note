@@ -1,0 +1,123 @@
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: #aaa;
+}
+#modal {
+	display: none;
+}
+#modal:target {
+	display: block;
+	position: absolute;
+	z-index: 100;
+	background-color: rgba(0,0,0,0.7);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	animation-name: fadeIn;
+	animation-duration: 0.5s;
+}
+#modal .panel {
+	position: relative;
+	height: 50%;
+	width: 40%;
+	margin: 10% auto 0 auto;
+	background-color: lightblue;
+	overflow: hidden;
+	border-radius: 10px 10px 5px 5px;
+}
+#modal .panel h2 {
+	font: italic 25px Verdana, Helvetica, sans-serif;
+	text-align: center;
+}
+#ok {
+	display: block;
+	position: absolute;
+	right: 5px;
+	top: calc(30% - 35px);
+	width: 70px;
+	height: 30px;
+	border-radius: 5px;
+	text-decoration: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	font-size: 16px;
+}
+
+.panel textarea{
+	position: absolute;
+	background-color: rgba(250, 200, 150, 0.6);
+	bottom: 1%;
+	top: 30%;
+	width: 96%;
+	margin: 0 2%;
+	resize: none;
+	font: 15px Verdana, Helvetica, sans-serif;
+	padding: 5px;
+	overflow: auto;
+}
+.plus {
+	fill: green;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	transition: all 0.2s;
+}
+
+.plus:hover{
+	transform: scale(1.2);
+	fill: lightgreen;
+}
+
+#close {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+.close {
+	fill: darkred;
+	transform: rotate(45deg);
+}
+
+.tile {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(rgb(220, 170, 100), rgb(255, 240, 220));
+	margin: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+	transition: all 0.2s;
+	padding: 10px;
+	float: left;
+	color: black;
+}
+.remove {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transform: scale(0.7);
+	z-index: 100;
+}
+
+.tile:hover {
+	box-shadow: 0 10px 15px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0, 0.2);
+	transform: scale(1.003);
+}
+
+.tile>p{
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	font-family: Verdana, Helvetica, sans-serif;
+}
